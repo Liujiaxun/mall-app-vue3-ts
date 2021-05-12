@@ -14,8 +14,13 @@ module.exports = {
     ecmaVersion: 2020,
   },
   rules: {
+    "vue/no-unused-components": "off",
     "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
     "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
+    "vue/no-unused-components": "off",
+    "@typescript-eslint/no-var-requires": 0,
+    "no-unused-vars": "off",
+    "no-unused-components": "off",
   },
   overrides: [
     {
