@@ -16,7 +16,14 @@
   overflow: hidden;
 }
 
-.page {
+@mixin wh100 {
   height: 100%;
   width: 100%;
+}
+.page {
+  @include wh100;
+}
+
+.img {
+  @include wh100;
 }

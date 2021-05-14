@@ -1,7 +1,10 @@
 <template>
   <RouterNext fix="home">
     <div class="home">
-      123
+      <div class="bcf">
+        <Swiper height="150" />
+        <Nav />
+      </div>
       <About />
       <!-- <Button size="mini"> 1233 </Button> -->
     </div>
@@ -14,9 +17,11 @@ import { useRoute } from "vue-router";
 import About from "@/views/About.vue";
 import { Button } from "vant";
 import RouterNext from "src/components/router-next/router-next.vue";
+import Swiper from "./components/swiper.vue";
+import Nav from "./components/nav.vue";
 export default defineComponent({
   name: "Home",
-  components: { About, Button, RouterNext },
+  components: { About, Button, RouterNext, Swiper, Nav },
   setup() {
     const route = useRoute();
     onMounted(() => {
@@ -29,6 +34,9 @@ export default defineComponent({
 <style lang="scss">
 .home {
   width: 100%;
-  height: 100px;
+  background: #f5f5f5;
+  .bcf {
+    background: #fff;
+  }
 }
 </style>

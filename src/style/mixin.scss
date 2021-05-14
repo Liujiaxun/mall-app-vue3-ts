@@ -1,0 +1,80 @@
+@mixin input-placeholder {
+  color: $ui-cz2;
+  font-size: 28px;
+  font-family: PingFangSC-Regular;
+}
+
+@mixin text-overflow-elli {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin text-overflow-two {
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+@mixin font($color, $size) {
+  color: $color;
+  font-size: $size;
+}
+
+@mixin beforeMixin($type, $color, $radius) {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: 0;
+  left: 0;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  box-sizing: border-box;
+  pointer-events: none;
+  border-radius: $radius * 2px;
+}
+
+@mixin parentMixin() {
+  position: relative;
+  border: none !important;
+}
+
+@mixin border($type: solid, $color: black, $radius: 0) {
+  @include parentMixin();
+  &:before {
+    @include beforeMixin($type, $color, $radius);
+    border: 1px $type $color;
+  }
+}
+@mixin border-top($type: solid, $color: black, $radius: 0) {
+  @include parentMixin();
+  &:before {
+    @include beforeMixin($type, $color, $radius);
+    border-top: 1px $type $color;
+  }
+}
+@mixin border-left($type: solid, $color: black, $radius: 0) {
+  @include parentMixin();
+  &:before {
+    @include beforeMixin($type, $color, $radius);
+    border-left: 1px $type $color;
+  }
+}
+@mixin border-bottom($type: solid, $color: black, $radius: 0) {
+  @include parentMixin();
+  &:before {
+    @include beforeMixin($type, $color, $radius);
+    border-bottom: 1px $type $color;
+  }
+}
+@mixin border-right($type: solid, $color: black, $radius: 0) {
+  @include parentMixin();
+  &:before {
+    @include beforeMixin($type, $color, $radius);
+    border-right: 1px $type $color;
+  }
+}
